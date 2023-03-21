@@ -1,16 +1,16 @@
 # Coding Assessment
 
 ## Description
-In this challenge, the goal was to modify starter code to create a random password generator. I needed to write the necessary variables and functions to prompt users for their desired password criteria such as: password length and the inclusion of uppercase letters, lowercase letters, numbers, and special characters. <br> <br> I used the functions prompt() and confirm() to have users select the criteria and then I used a 'for' loop with a randomIndex variable that included the methods Math.floor() and Math.random() to generate a random password that met the user's criteria.
+In this challenge, I created a coding assessment using JavaScript, for loops, event listeners, and local storage to save the user's score. First, I created an HTML file with a form for the questions and buttons to submit the answers. I then used JavaScript to create an array of objects with the questions, answer choices, and correct answers. I used a for loop to iterate over the array and display the questions and answer choices on the page. I added event listeners to the submit buttons to check the answers and update the score. Finally, I used local storage to save the user's score so they can see their progress on future visits.
 
 <br>
 
-## Password Generator Preview
+## Coding Assessment Preview
 
-![03-javascript-homework-demo.png](./assets/images/03-javascript-homework-demo.png)
+![03-javascript-homework-demo.png](./assets/images/04-web-apis-homework-demo.gif)
 
 <br>
 
 ## Deployed Website
 
-[Password Generator!](https://trevormcgill.github.io/password-generator/)
+[Coding Assessment!](https://trevormcgill.github.io/coding-assessment/)
