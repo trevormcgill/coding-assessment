@@ -30,23 +30,23 @@ var questions = [
   },
   {
     questionText: "WHAT IS GOING ON????",
-    questionChoices: ["Pizza", "okay", "Yogurt", "Hot Dogs"],
+    questionChoices: ["I don't know", "okay", "AAAHHH", "HOT DOG!"],
     correctAnswer: 2
   },
   {
     questionText: "What is your favorite thing?",
-    questionChoices: ["Pizza", "Ice Cream", "Yogurt", "Hot Dogs"],
-    correctAnswer: 0
+    questionChoices: ["Computer", "Apple", "Overwatch", "Path of Exile"],
+    correctAnswer: 2
   },
   {
     questionText: "What is your favorite ting?",
-    questionChoices: ["Pizza", "Ice Cream", "Yogurt", "Hot Dogs"],
+    questionChoices: ["You", "Me", "Nandos", "HELP ME"],
     correctAnswer: 3
   },
   {
-    questionText: "What is your favorite brit?",
-    questionChoices: ["Pizza", "Ice Cream", "Yogurt", "Hot Dogs"],
-    correctAnswer: 0
+    questionText: "What is your favorite animal?",
+    questionChoices: ["Dog", "Monke", "Bear", "MONKE"],
+    correctAnswer: 1
   },
 ];
 
