@@ -20,32 +20,32 @@ saveFormContainer.appendChild(saveFormEl);
 var questions = [
   {
     questionText: "What is your favorite color?",
-    questionChoices: ["Red", "White", "Blue"],
+    questionChoices: ["1. Red", "2. White", "3. Blue"],
     correctAnswer: 1
   },
   {
     questionText: "What is your favorite food?",
-    questionChoices: ["Pizza", "Ice Cream", "Yogurt", "Hot Dogs"],
-    correctAnswer: 2
+    questionChoices: ["1. Pizza", "2. Ice Cream", "3. Yogurt", "4. Hot Dogs"],
+    correctAnswer: 0
   },
   {
     questionText: "WHAT IS GOING ON????",
-    questionChoices: ["I don't know", "okay", "AAAHHH", "HOT DOG!"],
+    questionChoices: ["1. I don't know", "2. okay", "3. AAAHHH", "4. HOT DOG!"],
     correctAnswer: 2
   },
   {
     questionText: "What is your favorite thing?",
-    questionChoices: ["Computer", "Apple", "Overwatch", "Path of Exile"],
+    questionChoices: ["1. Computer", "2. Apple", "3. Overwatch", "4. Path of Exile"],
     correctAnswer: 2
   },
   {
     questionText: "What is your favorite ting?",
-    questionChoices: ["You", "Me", "Nandos", "HELP ME"],
+    questionChoices: ["1. You", "2. Me", "3. Nandos", "4. HELP ME"],
     correctAnswer: 3
   },
   {
     questionText: "What is your favorite animal?",
-    questionChoices: ["Dog", "Monke", "Bear", "MONKE"],
+    questionChoices: ["1. Dog", "2. Monke", "3. Bear", "4. MONKE"],
     correctAnswer: 1
   },
 ];
