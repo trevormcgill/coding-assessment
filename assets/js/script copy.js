@@ -9,6 +9,14 @@ var questionIndex = 0;
 var lastQuestionCorrect;
 var lastQuestionIncorrect;
 
+// create a container for the save form
+var saveFormContainer = document.createElement("div");
+saveFormContainer.id = "save-form-container";
+mainEl.appendChild(saveFormContainer);
+
+// append the save form to the container
+saveFormContainer.appendChild(saveFormEl);
+
 var questions = [
   {
     questionText: "What is your favorite color?",
@@ -155,7 +163,7 @@ var questions = [
   };
 }; */
 
-function displayQuestion() {
+/* function displayQuestion() {
   mainEl.innerHTML = "";
 
   if (questionIndex >= questions.length) {
@@ -205,7 +213,60 @@ function displayQuestion() {
     btnDivEl.appendChild(buttonEl);
   };
 };
+ */
 
+function displayQuestion() {
+  mainEl.innerHTML = "";
+
+  if (questionIndex >= questions.length) {
+    endGame();
+    return;
+  }
+
+  var btnDivEl = document.createElement("div");
+  mainEl.appendChild(btnDivEl);
+
+  var h1El = document.createElement("h1");
+  h1El.setAttribute("id", "intro");
+  h1El.textContent = questions[questionIndex].questionText;
+  btnDivEl.appendChild(h1El);
+
+  // Reset result variables
+  lastQuestionCorrect = "";
+  lastQuestionIncorrect = "";
+
+  // Append result text to btnDivEl
+  var pEl = document.createElement("p");
+  pEl.textContent = lastQuestionCorrect;
+  btnDivEl.appendChild(pEl);
+
+  for (var j = 0; j < questions[questionIndex].questionChoices.length; j++) {
+    var buttonEl = document.createElement("button");
+    buttonEl.textContent = questions[questionIndex].questionChoices[j];
+    buttonEl.setAttribute("class", "custom-btn");
+    buttonEl.setAttribute("data-index", j);
+    btnDivEl.appendChild(buttonEl);
+  }
+
+  btnDivEl.addEventListener("click", function (event) {
+    var target = event.target;
+
+    if (target.getAttribute("class") !== "custom-btn") return;
+
+    var clickedQuestionIndex = parseInt(target.getAttribute("data-index"));
+
+    if (clickedQuestionIndex === questions[questionIndex].correctAnswer) {
+      lastQuestionCorrect = "Correct";
+    } else {
+      time = time - 10;
+      lastQuestionIncorrect = "Incorrect";
+    }
+
+    questionIndex++;
+
+    displayQuestion();
+  });
+}
 
 // start button
 startBtnEl.addEventListener("click", function (event) {
@@ -232,6 +293,9 @@ function endGame() {
   console.log("hit")
   clearInterval(interval);
   //save to local storage
-  saveFormEl.setAttribute("style", "display: block !important");
+  saveFormContainer.classList.remove("d-none");
+  saveFormContainer.appendChild(saveFormEl);
+  saveFormEl.setAttribute("style", "d-block !important");
+  console.log(document.querySelector('#save-form'));
   timerEl.setAttribute("style", "display: none !important");
-}
+};
