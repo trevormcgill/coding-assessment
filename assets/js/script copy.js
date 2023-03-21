@@ -42,7 +42,7 @@ var questions = [
   },
 ];
 
-function displayQuestion() {
+/* function displayQuestion() {
   mainEl.innerHTML = "";
 
   if (questionIndex >= questions.length) {
@@ -97,16 +97,13 @@ function displayQuestion() {
     btnDivEl.appendChild(buttonEl);
 
     };
-  }
+  } */
 
 
 /* function displayQuestion() {
   mainEl.innerHTML = "";
+  console.log('questionIndex:', questionIndex);
 
-  if (questionIndex >= questions.length) {
-    endGame();
-    return;
-  }
   var btnDivEl = document.createElement("div")
   mainEl.appendChild(btnDivEl)
   
@@ -134,9 +131,14 @@ function displayQuestion() {
       lastQuestionIncorrect = "Incorrect";
     }
     
-    questionIndex++;
-
+    
+    if (questionIndex >= questions.length) {
+      endGame();
+      return;
+    };
+    
     displayQuestion();
+    questionIndex++;
 
   });
 
@@ -150,9 +152,59 @@ function displayQuestion() {
     //make another div put buttons in div and style
     btnDivEl.appendChild(buttonEl);
 
-    };
-  } */
+  };
+}; */
 
+function displayQuestion() {
+  mainEl.innerHTML = "";
+
+  if (questionIndex >= questions.length) {
+    endGame();
+    return;
+  }
+  
+  var btnDivEl = document.createElement("div")
+  mainEl.appendChild(btnDivEl)
+  
+  var h1El = document.createElement('h1');
+  h1El.setAttribute("id", "intro")
+  h1El.textContent = questions[questionIndex].questionText;
+  btnDivEl.appendChild(h1El);
+  
+
+  var pEl = document.createElement('p');
+  pEl.textContent = lastQuestionCorrect;
+  mainEl.appendChild(pEl);
+  
+  var handleClick = function(event) {
+    var target = event.target;
+  
+    if (target.getAttribute("class") !== 'custom-btn') return;
+
+    var clickedQuestionIndex = parseInt(target.getAttribute("data-index"));
+
+    if (clickedQuestionIndex === questions[questionIndex].correctAnswer) {
+      lastQuestionCorrect = "Correct";
+    } else {
+      time = time - 10;
+      lastQuestionIncorrect = "Incorrect";
+    }
+    
+    questionIndex++;
+    mainEl.removeEventListener("click", handleClick);
+    displayQuestion();
+  };
+
+  mainEl.addEventListener("click", handleClick);
+
+  for (var j = 0; j < questions[questionIndex].questionChoices.length; j++) {
+    var buttonEl = document.createElement('button');
+    buttonEl.textContent = questions[questionIndex].questionChoices[j];
+    buttonEl.setAttribute("class", "custom-btn");
+    buttonEl.setAttribute("data-index", j);
+    btnDivEl.appendChild(buttonEl);
+  };
+};
 
 
 // start button
@@ -177,6 +229,7 @@ startBtnEl.addEventListener("click", function (event) {
 
 // what happens when game is over
 function endGame() {
+  console.log("hit")
   clearInterval(interval);
   //save to local storage
   saveFormEl.setAttribute("style", "display: block !important");
