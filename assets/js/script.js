@@ -10,12 +10,12 @@ var lastQuestionCorrect;
 var lastQuestionIncorrect;
 
 // create a container for the save form
-var saveFormContainer = document.createElement("div");
+/* var saveFormContainer = document.createElement("div");
 saveFormContainer.id = "save-form-container";
-mainEl.appendChild(saveFormContainer);
+mainEl.appendChild(saveFormContainer); */
 
 // append the save form to the container
-saveFormContainer.appendChild(saveFormEl);
+/* saveFormContainer.appendChild(saveFormEl); */
 
 var questions = [
   {
@@ -128,9 +128,9 @@ function endGame() {
   console.log("hit")
   clearInterval(interval);
   //save to local storage
-  saveFormContainer.classList.remove("d-none");
-  saveFormContainer.appendChild(saveFormEl);
-  saveFormEl.setAttribute("style", "d-block !important");
+/*   saveFormContainer.classList.remove("d-none");
+  saveFormContainer.appendChild(saveFormEl); */
+  saveFormEl.setAttribute("class", "d-block !important");
   console.log(document.querySelector('#save-form'));
   timerEl.setAttribute("style", "display: none !important");
 };
