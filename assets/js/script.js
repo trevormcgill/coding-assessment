@@ -130,7 +130,7 @@ function endGame() {
   //save to local storage
 /*   saveFormContainer.classList.remove("d-none");
   saveFormContainer.appendChild(saveFormEl); */
-  saveFormEl.setAttribute("class", "d-block !important");
+  saveFormEl.setAttribute("class", "row and mx-auto col-10 col-md-8 col-lg-6 w-25 !important");
   console.log(document.querySelector('#save-form'));
   timerEl.setAttribute("style", "display: none !important");
 };
