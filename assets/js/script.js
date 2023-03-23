@@ -5,6 +5,7 @@ var saveFormEl = document.querySelector("#save-form");
 
 var interval;
 var time = 100;
+var score = 0;
 var questionIndex = 0;
 var lastQuestionCorrect;
 var lastQuestionIncorrect;
@@ -92,6 +93,7 @@ function displayQuestion() {
 
     if (clickedQuestionIndex === questions[questionIndex].correctAnswer) {
       lastQuestionCorrect = "Correct";
+      score++;
     } else {
       time = time - 10;
       lastQuestionIncorrect = "Incorrect";
@@ -126,10 +128,15 @@ startBtnEl.addEventListener("click", function (event) {
 // what happens when game is over
 function endGame() {
   console.log("hit")
+  console.log(score)
   clearInterval(interval);
   //save to local storage
 /*   saveFormContainer.classList.remove("d-none");
   saveFormContainer.appendChild(saveFormEl); */
+  var finalScore = document.createElement("h1");
+  finalScore.setAttribute("class", "fs-1 mt-2 text-center");
+  finalScore.textContent = `Final Score: ${score}`
+  saveFormEl.prepend(finalScore);
   saveFormEl.setAttribute("class", "row and mx-auto col-10 col-md-8 col-lg-6 w-25 !important");
   console.log(document.querySelector('#save-form'));
   timerEl.setAttribute("style", "display: none !important");
