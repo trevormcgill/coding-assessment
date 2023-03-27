@@ -7,7 +7,7 @@ In this challenge, I created a coding assessment using JavaScript, for loops, ev
 
 ## Coding Assessment Preview
 
-![03-javascript-homework-demo.png](./assets/images/04-web-apis-homework-demo.gif)
+![04-web-apis-homework-demo.gif](./assets/images/04-web-apis-homework-demo.gif)
 
 <br>
 

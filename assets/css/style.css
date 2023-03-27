@@ -72,7 +72,7 @@ nav ul li a:hover {
   background-color: #a782b0;
   border: none;
   color: #FFFFFF;
-  padding: 20px;
+  padding: 10px;
   font-size: 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -104,144 +104,31 @@ nav ul li a:hover {
   background-color: #775d7e;
 }
 
-#quiz {
-  display: none;
-  margin-top: 50px;
-}
-
-#question-container {
-  margin-top: 50px;
-}
-
-.question {
-  display: none;
-  text-align: center;
-  margin-top: 50px;
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.answers {
-  list-style: none;
+#high-score-initials {
   padding: 0;
-  margin-bottom: 50px;
 }
 
-.answers li {
-  margin: 10px 0;
+#save-button {
+  background-color: #a782b0;
 }
 
-.answers button {
-  background-color: #4CAF50;
-  border: none;
-  color: #FFFFFF;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
+#save-button:hover {
+  background-color: #775d7e;
 }
 
-.answers button:hover {
-  background-color: #3E8E41;
-}
-
-#progress {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-#score {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 50px;
-}
-
-#game-over {
-  display: none;
-  text-align: center;
-  margin-top: 50px;
-}
-
-#game-over h2 {
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-#game-over p {
-  font-size: 20px;
-  margin-bottom: 50px;
-}
-
-#submit-score-form {
-  text-align: center;
-  margin-top: 50px;
-}
-
-#submit-score-form label {
+.delete-btn {
   display: block;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-#submit-score-form input[type=text] {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: 2px solid #3C3F58;
-}
-
-#highscores {
-  display: none;
-  margin-top: 50px;
-}
-
-#highscores h2 {
-  font-size: 40px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-#highscores table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 20px;
-  margin-bottom: 50px;
-}
-
-#highscores th {
   text-align: left;
-  padding: 10px;
-  background-color: #3C3F58;
-  color: #FFFFFF;
-}
-
-#highscores td {
-  padding: 10px;
-  border-bottom: 1px solid #CCC;
-}
-
-#highscores tr:hover td {
-  background-color: #F5F5F5;
-}
-
-#highscores .delete-button {
   background-color: #D9534F;
   border: none;
   color: #FFFFFF;
-  padding: 10px;
-  font-size: 16px;
+  padding: 5px;
+  font-size: 20px;
   border-radius: 5px;
   cursor: pointer;
-  margin-right: 10px;
+  margin: 10px 0 10px 0;
 }
 
-#highscores .delete-button:hover {
+.delete-btn:hover {
   background-color: #C9302C;
 }
