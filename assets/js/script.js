@@ -9,7 +9,6 @@ var time = 100;
 var score = 0;
 var questionIndex = 0;
 var lastQuestionCorrect;
-var lastQuestionIncorrect;
 
 var questions = [
   {
@@ -60,14 +59,12 @@ function displayQuestion() {
   h1El.textContent = questions[questionIndex].questionText;
   btnDivEl.appendChild(h1El);
 
-  // Reset result variables
-  lastQuestionCorrect = "";
-  lastQuestionIncorrect = "";
 
   // Append result text to btnDivEl
   var pEl = document.createElement("p");
   pEl.textContent = lastQuestionCorrect;
-  btnDivEl.appendChild(pEl);
+  mainEl.appendChild(pEl);
+  pEl.setAttribute("class", "fs-1 mt-5 text-center");
 
   for (var j = 0; j < questions[questionIndex].questionChoices.length; j++) {
     var buttonEl = document.createElement("button");
@@ -89,7 +86,7 @@ function displayQuestion() {
       score++;
     } else {
       time = time - 10;
-      lastQuestionIncorrect = "Incorrect";
+      lastQuestionCorrect = "Incorrect";
     }
 
     questionIndex++;
